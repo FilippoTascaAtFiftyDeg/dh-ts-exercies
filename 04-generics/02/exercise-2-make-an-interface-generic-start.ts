@@ -14,14 +14,17 @@ interface Country<T> {
     languages: T;
 }
 
-const languagesObj1: Country<Language> = {
+interface SingleLanguageCountry extends Country<Language> {}
+interface MultipleLanguagesCountry extends Country<Languages> {}
+
+const languagesObj1: SingleLanguageCountry = {
     name: "New Zealand",
     languages: "English, Māori"
 };
 
 console.log(languagesObj1.languages);
 
-const languagesObj2: Country<Languages> = {
+const languagesObj2: MultipleLanguagesCountry = {
     name: "Spain",
     languages: ["Spanish", "Catalan", "Galician", "Basque", "Valencian"],
 };
